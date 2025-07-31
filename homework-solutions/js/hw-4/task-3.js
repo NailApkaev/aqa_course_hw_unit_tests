@@ -8,11 +8,10 @@
 */
 let minAge = 18;
 let maxAge = 60;
-let age = '2';
-if (typeof age != 'number') {
-  age = Number(age);
-}
-if (age < minAge) {
+let age = '60';
+if (isNaN(age)) {
+  console.log('Incorrect data type');
+} else if (age < minAge) {
   console.log("You don't have access cause your age is " + age + " It's less then ");
 } else if (age >= minAge && age < maxAge) {
   console.log('Welcome  !');
