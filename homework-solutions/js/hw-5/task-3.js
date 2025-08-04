@@ -7,4 +7,20 @@ const word = 'hello';
 
 let vowelsAndConsonantsResult = '';
 
+let wordWithoutSymbol = word.replace (/[^a-zA-Z]/g, '');
+let str = wordWithoutSymbol.length;
+
+let countA = 0;
+let countB = 0;
+
+for (let i = 0; i <= str-1; i++){
+    if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u'){
+        countA++;
+    } else {
+        countB++;
+    }
+}
+vowelsAndConsonantsResult = `${word} contains ${countA} vowels and ${countB} consonants`;
+console.log(vowelsAndConsonantsResult);
+
 export { vowelsAndConsonantsResult };
