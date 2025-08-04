@@ -8,6 +8,7 @@ const word = 'hello';
 let vowelsAndConsonantsResult = '';
 
 let wordWithoutSymbol = word.replace (/[^a-zA-Z]/g, '');
+wordWithoutSymbol = wordWithoutSymbol.toLowerCase();
 let str = wordWithoutSymbol.length;
 
 let countA = 0;

@@ -11,8 +11,7 @@ for (let i = 10; i >= 0; i--) {
         evenNumbersResult = (evenNumbersResult + i + '-');
     }
 }
-let len = evenNumbersResult.length;
-evenNumbersResult = evenNumbersResult.slice(0,len-1);
+evenNumbersResult = evenNumbersResult.slice(0,-1);
 console.log (evenNumbersResult);
 
 /**
