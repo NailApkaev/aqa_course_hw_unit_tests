@@ -15,7 +15,7 @@ let countA = 0;
 let countB = 0;
 
 for (let i = 0; i <= str-1; i++){
-    if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u'){
+    if (wordWithoutSymbol[i] == 'a' || wordWithoutSymbol[i] == 'e' || wordWithoutSymbol[i] == 'i' || wordWithoutSymbol[i] == 'o' || wordWithoutSymbol[i] == 'u'){
         countA++;
     } else {
         countB++;
