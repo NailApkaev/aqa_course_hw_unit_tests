@@ -7,7 +7,14 @@
 */
 
 function findMissingNumber(numbers) {
-  // Ваш код
+  for (let i = 1; i <= numbers.length + 1; i++){
+    if (!(numbers.includes(i))) {
+      return i;
+    } 
+  }
 }
+
+const arr = [5,2,7,3,8,1,6]
+console.log(findMissingNumber(arr));
 
 export { findMissingNumber };
