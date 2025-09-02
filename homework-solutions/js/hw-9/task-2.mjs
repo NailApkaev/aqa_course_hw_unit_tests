@@ -14,23 +14,56 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  // Ваш код
+//Ваш код
+    if (
+      typeof character !== "object" || 
+      character === null ||
+      typeof character.name !== "string" ||
+      typeof character.age !== "number"
+  ) {
+    throw new TypeError("Invalid input: object with name (string) and age (number) required");
+  }
+
+  characters.push(character);
 }
 
 function getCharacter(name) {
   // Ваш код
+  // for (let obj of characters){
+  //   for (let key in obj) {
+  //     if (obj[key] === name) return obj;
+  //   }
+  // }
+  return characters.find ((obj) => Object.values(obj).includes(name))
 }
 
 function getCharactersByAge(minAge) {
   // Ваш код
+  if (typeof minAge !== "number"){
+    throw new TypeError("Invalid input: Input only age!"); 
+  }
+  return characters.filter((obj) => Object.values(obj).some((val) => typeof val === "number" && val >= minAge));
 }
 
 function updateCharacter(name, newCharacter) {
   // Ваш код
+  let character = getCharacter(name);
+  if (!character) {
+    throw new TypeError("Invalid input: Персонаж с таким именем отсутствует!");
+  };
+  Object.assign(character,newCharacter);
+  return character;
 }
 
 function removeCharacter(name) {
-  // Ваш код
+  const index = characters.findIndex((el) => Object.values(el).includes(name));
+  console.log(index);
+  if (index === -1) {
+    throw new TypeError("Invalid input: Персонаж с таким именем отсутствует!");
+  };
+
+  const result = characters.splice(index,1);
+  return result;
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
