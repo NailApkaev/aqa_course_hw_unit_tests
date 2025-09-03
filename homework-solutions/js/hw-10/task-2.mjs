@@ -9,6 +9,11 @@
 
 function countOccurrences(arr) {
   // ваш код
+  const result = {};
+  for (const value of arr) {
+    result[value] = (result[value] ?? 0) + 1;
+  };
+  return result;
 }
 
 export { countOccurrences };
