@@ -63,7 +63,7 @@ all();
 
 async function allS() {
     try{
-        const results = await Promise.all([promiseNumber(1), promiseNumber(2), promiseNumber(3)]);
+        const results = await Promise.allSettled([promiseNumber(1), promiseNumber(2), promiseNumber(3)]);
         results.forEach((el) => console.log(el));
     } catch (error) {
         console.log('Error', error);
